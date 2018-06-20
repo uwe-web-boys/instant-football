@@ -1,10 +1,22 @@
 import { Component } from '@angular/core';
+import { CompetitionService } from "./config/competition.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'app';
+  title = 'instant.football';
+
+  competitions;
+
+  constructor(private CompetitionService: CompetitionService) {}
+
+  ngOnInit() {
+    this.CompetitionService.getCompetitions().subscribe(competitions => {
+      this.competitions = competitions;
+    });
+  }
 }
