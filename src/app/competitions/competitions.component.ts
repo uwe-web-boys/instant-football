@@ -6,9 +6,9 @@ import { CompetitionsService } from "../config/competitions.service";
   templateUrl: './competitions.component.html',
   styleUrls: ['./competitions.component.scss']
 })
+
 export class CompetitionsComponent implements OnInit {
 
-  title = 'instant.football';
   competitions;
 
   constructor(private competitionsService: CompetitionsService) {}
