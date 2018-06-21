@@ -12,10 +12,10 @@ export class AppComponent {
 
   competitions;
 
-  constructor(private CompetitionService: CompetitionService) {}
+  constructor(private competitionService: CompetitionService) {}
 
   ngOnInit() {
-    this.CompetitionService.getCompetitions().subscribe(competitions => {
+    this.competitionService.getCompetitions().subscribe(competitions => {
       this.competitions = competitions;
     });
   }
