@@ -7,6 +7,6 @@ export class CompetitionService {
   constructor(private http: HttpClient) {}
 
   getCompetitions() {
-    return this.http.get(environment.apiUrls.competitions, environment.apiData);
+    return this.http.get(environment.api.urls.competitions, environment.api.data);
   }
 }
