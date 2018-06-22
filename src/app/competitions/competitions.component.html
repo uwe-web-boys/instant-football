@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <!-- Display a list of all the competition names -->
+  <ul>
+    <li *ngFor="let competition of competitions">
+      <a href="/competition/{{ competition.id }}">{{ competition.caption }}</a>
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>

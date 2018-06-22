@@ -3,10 +3,9 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <!-- Display a list of all the competition names -->
-  <ul>
-    <li *ngFor="let competition of competitions">
-      {{ competition.caption }}
-    </li>
-  </ul>
+  <nav>
+    <a routerLink="/" routerLinkActive="active">Home</a>
+  </nav>
 </div>
+
+<router-outlet></router-outlet>

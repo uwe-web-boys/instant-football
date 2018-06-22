@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from "../../environments/environment";
 
 @Injectable()
-export class CompetitionService {
+export class CompetitionsService {
   constructor(private http: HttpClient) {}
 
   getCompetitions() {

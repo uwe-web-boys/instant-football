@@ -1,19 +1,29 @@
+// Modules
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
 
+// Components
 import { AppComponent } from './app.component';
-import { CompetitionService } from "./config/competition.service";
+import { CompetitionsComponent } from './competitions/competitions.component';
+import { CompetitionComponent } from './competition/competition.component';
+
+// Services
+import { CompetitionsService } from './config/competitions.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CompetitionComponent,
+    CompetitionsComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule
   ],
-  providers: [CompetitionService],
+  providers: [CompetitionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
