@@ -7,7 +7,6 @@ export class CompetitionService {
   constructor(private http: HttpClient) {}
 
   getCompetition(id) {
-    const competitionUrl = `${environment.api.urls.competitions}/${id}`
-    return this.http.get(competitionUrl, environment.api.data);
+    return this.http.get(`${environment.api.urls.competitions}/${id}`, environment.api.data);
   }
 }
