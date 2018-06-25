@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CompetitionService } from "./competition.service";
 
 @Component({
   selector: 'app-competition',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompetitionComponent implements OnInit {
 
-  constructor() { }
+  id;
+  competition;
 
-  ngOnInit() {
+  constructor(
+    private route: ActivatedRoute,
+    private competitionService: CompetitionService
+  ) { }
+
+  ngOnInit(): void {
+    this.getCompetition();
   }
 
+  getCompetition(): void {
+    // Get the competition id from the route
+    const id = +this.route.snapshot.paramMap.get('id');
+    // Make the call to return the competition data from the api
+    this.competitionService.getCompetition(id).subscribe(
+      competition => {
+        this.competition = competition;
+      }
+    )
+  }
 }

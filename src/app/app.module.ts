@@ -10,7 +10,8 @@ import { CompetitionsComponent } from './competitions/competitions.component';
 import { CompetitionComponent } from './competition/competition.component';
 
 // Services
-import { CompetitionsService } from './config/competitions.service';
+import { CompetitionsService } from './competitions/competitions.service';
+import { CompetitionService } from './competition/competition.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,10 @@ import { CompetitionsService } from './config/competitions.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [CompetitionsService],
+  providers: [
+    CompetitionsService,
+    CompetitionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
